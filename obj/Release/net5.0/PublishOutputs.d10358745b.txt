@@ -1,5 +1,0 @@
-/home/vlad/Programs/Programs/chill/TPLLearn/publish/TPLLearn
-/home/vlad/Programs/Programs/chill/TPLLearn/publish/TPLLearn.dll
-/home/vlad/Programs/Programs/chill/TPLLearn/publish/TPLLearn.deps.json
-/home/vlad/Programs/Programs/chill/TPLLearn/publish/TPLLearn.runtimeconfig.json
-/home/vlad/Programs/Programs/chill/TPLLearn/publish/TPLLearn.pdb
