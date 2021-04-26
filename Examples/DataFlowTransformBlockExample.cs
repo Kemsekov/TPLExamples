@@ -12,27 +12,35 @@ namespace TPLLearn.Examples
 {
     public static partial class TPLExamples
     {
-        public static async Task TransformBlockExample(){
+        public static async Task DataFlowTransformBlockExample(){
             var options = new ExecutionDataflowBlockOptions();
-            options.BoundedCapacity = Environment.ProcessorCount*4;
+            options.BoundedCapacity = Environment.ProcessorCount*8;
             options.MaxDegreeOfParallelism = Environment.ProcessorCount;
             options.EnsureOrdered = false;
+            var rand = new ThreadLocal<Random>(()=>new Random());
+            var buff = new ThreadLocal<StringBuilder>(()=>new StringBuilder());
+            //this block recieve a sizeOfWord and generate some random word
+            //with A-Z chars and 0-9 symbols in it. I did'nt came up with a better
+            //example. 
             var transformBlock = new TransformBlock<int,string>(async sizeOfWord=>{
                 System.Console.WriteLine("Request {0} with {1} size of word",Task.CurrentId,sizeOfWord);
-                StringBuilder buff = new();
-                var rand = new Random();
+                var buff_ = buff.Value;
+                var rand_ = rand.Value; 
+                buff_.Clear();
                 for(int j = 0; j<sizeOfWord;j++){
-                    if(rand.Next()%10>7){
-                        buff.Append(rand.Next()%10);
+                    //approximately 20% of word's chars is a digit
+                    if(rand.Value.Next()%10>7){
+                        buff_.Append(rand_.Next()%10);
                         continue;
                     }
-                    buff.Append(Convert.ToChar(rand.Next()%25+65));
+                    buff_.Append(Convert.ToChar(rand_.Next()%25+65));
                 }
-                return buff.ToString();
+                return buff.Value.ToString();
             },options);
+            //Summarize count of letters and sum of digits
             var actionBlock = new ActionBlock<string>(async request=>{
-                var rand = new Random();
-                Thread.Sleep(rand.Next()%1000+500);
+                //do some stuff...
+                Thread.Sleep(rand.Value.Next()%1000+500);
                 int sum = 0;
                 foreach(char c in request){
                     if(char.IsLetter(c)){

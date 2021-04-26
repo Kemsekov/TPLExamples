@@ -17,7 +17,7 @@ namespace TPLLearn.Examples
             var options = new ExecutionDataflowBlockOptions();
             options.MaxDegreeOfParallelism = Environment.ProcessorCount;
             options.EnsureOrdered = false;
-            options.BoundedCapacity=32;
+            options.BoundedCapacity=Environment.ProcessorCount*8;
             var actionBlock = new ActionBlock<int>(async request=>{
                 Thread.Sleep(1000);
                 System.Console.WriteLine("Request {0} is proccessed",request);
