@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sdlXtLV+oDm04bN06bgEtaNJ+15srqK1M0xy0sdzaKWCc6S8r+QUApdSTsNxQ1WCqBu5f/caWcC64S7TuuVhlw==",
+  "dgSpecHash": "IaZ2MAGt2oUYTL5dKfSU5IO3Qhw4HDI78mg2i8Dj93uErnHijZFO5a0teWMF2GZGYUcEj7MQhfOot4tI1cVeUA==",
   "success": true,
-  "projectFilePath": "/home/vlad/Programs/Programs/chill/TPLLearn/TPLLearn.csproj",
+  "projectFilePath": "/home/vlad/Programs/Programs/chill/TPLExamples/TPLLearn.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

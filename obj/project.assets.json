@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/vlad/Programs/Programs/chill/TPLLearn/TPLLearn.csproj",
+      "projectUniqueName": "/home/vlad/Programs/Programs/chill/TPLExamples/TPLLearn.csproj",
       "projectName": "TPLLearn",
-      "projectPath": "/home/vlad/Programs/Programs/chill/TPLLearn/TPLLearn.csproj",
+      "projectPath": "/home/vlad/Programs/Programs/chill/TPLExamples/TPLLearn.csproj",
       "packagesPath": "/home/vlad/.nuget/packages/",
-      "outputPath": "/home/vlad/Programs/Programs/chill/TPLLearn/obj/",
+      "outputPath": "/home/vlad/Programs/Programs/chill/TPLExamples/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/vlad/.nuget/NuGet/NuGet.Config"

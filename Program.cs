@@ -13,7 +13,7 @@ namespace TPLLearn
     {
         static void Main(string[] args)
         {
-            TPLExamples.TaskRunningChaining().Wait();
+            //TPLExamples.TaskRunningChaining().Wait();
         }
     }
 }
