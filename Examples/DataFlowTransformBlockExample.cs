@@ -22,7 +22,7 @@ namespace TPLLearn.Examples
             //this block recieve a sizeOfWord and generate some random word
             //with A-Z chars and 0-9 symbols in it. I did'nt came up with a better
             //example. 
-            var transformBlock = new TransformBlock<int,string>(async sizeOfWord=>{
+            var transformBlock = new TransformBlock<int,string>(sizeOfWord=>{
                 System.Console.WriteLine("Request {0} with {1} size of word",Task.CurrentId,sizeOfWord);
                 var buff_ = buff.Value;
                 var rand_ = rand.Value; 
@@ -38,7 +38,7 @@ namespace TPLLearn.Examples
                 return buff.Value.ToString();
             },options);
             //Summarize count of letters and sum of digits
-            var actionBlock = new ActionBlock<string>(async request=>{
+            var actionBlock = new ActionBlock<string>(request=>{
                 //do some stuff...
                 Thread.Sleep(rand.Value.Next()%1000+500);
                 int sum = 0;
