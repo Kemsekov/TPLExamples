@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using TPLLearn.Examples;
 
-
 namespace TPLLearn
 {
 
@@ -16,8 +15,7 @@ namespace TPLLearn
     {
         static void Main(string[] args)
         {
-            //TPLExamples.AutoResetEventExample();
-            
+            TPLExamples.SemaphoreSlimExample();
         }
     }
 }
