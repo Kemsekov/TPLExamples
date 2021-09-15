@@ -13,11 +13,14 @@ namespace TPLLearn.Examples
         public static void AutoResetEventExample(){
             var autoResetEvent = new AutoResetEvent(false);
             var tasks = new List<Task>();
-            for(int i = 0;i<10;i++)
+            //we run 5 tasks
+            for(int i = 0;i<5;i++)
                 tasks.Add(Task.Run(DoStuff));
-            
+            //we wait until they do something
             Task.Delay(1000).Wait();
             System.Console.WriteLine("autoResetEvent set");
+
+            //we release one task per second until they all finished
             while(!Task.WaitAll(tasks.ToArray(),TimeSpan.FromSeconds(1))){
                 System.Console.WriteLine("autoResetEvent set again");
                 autoResetEvent.Set();
